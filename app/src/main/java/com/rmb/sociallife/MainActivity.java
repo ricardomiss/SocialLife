@@ -16,6 +16,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
+//Importaciones para la funcion de la imagen de perfill
+import android.view.View;
+import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.gms.maps.SupportMapFragment;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     //Variables
     DrawerLayout drawerLayout;
@@ -36,6 +41,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Funcion para abrir otro activity al tocar la imagen de perfil
+        ShapeableImageView imageView = findViewById(R.id.my_image_view);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PerfilUser.class);
+                startActivity(intent);
+            }
+        });
+
+        //Funcion para abrir otro activity al tocar las notificaciones
+        ShapeableImageView  imageViewNotif = findViewById(R.id.my_notificacion);
+
+        imageViewNotif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Notificacionesuser.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -55,4 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 }
