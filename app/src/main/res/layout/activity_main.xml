@@ -24,6 +24,45 @@
         app:headerLayout="@layout/header_nav"
         app:menu="@menu/main_menu"/>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/bottom_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#304F91"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_marginLeft="20dp"
+                android:id="@+id/btn_Misiones"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Misiones"
+                app:cornerRadius="10dp"
+                android:textColor="@color/mytextblack"
+                />
+
+            <Button
+                android:layout_marginLeft="20dp"
+                android:id="@+id/btn_Alertas"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Alertas"
+                style="?attr/materialButtonOutlinedStyle"
+                app:strokeColor="@color/white"
+                app:cornerRadius="10dp"
+                android:textColor="@color/mytextwhite"
+                />
+        </LinearLayout>
+
+    </FrameLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
 
